@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>VST3PluginLiblary_3.6.13</id>
+    <version>1.0.0</version>
+    <authors>Utsubo-Kazura</authors>
+    <owners>Utsubo-Kazura</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">GPL-3.0-only</license>
+    <projectUrl>https://github.com/Utsubo-Kazura/VST3PluginLiblary_Nuget</projectUrl>
+    <description>For developing VST3 plug-ins. License is GPLv3.</description>
+    <releaseNotes>Beta Release.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>C++ VST3</tags>
+  </metadata>
+</package>

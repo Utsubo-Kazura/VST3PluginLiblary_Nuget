@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ImportGroup Label="PropertySheets"/>
+    <PropertyGroup>
+    </PropertyGroup>
+
+    <!-- Debug x64の設定 -->
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      <ClCompile>
+        <PreprocessorDefinitions>VSTGUI_LIVE_EDITING=1;DEVELOPMENT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <!-- 追加のインクルードディレクトリ -->
+        <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../../build/native/;$(MSBuildThisFileDirectory)../../build/native/vstgui4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      </ClCompile>
+      <Link>
+        <ModuleDefinitionFile>$(MSBuildThisFileDirectory)/vst3.def</ModuleDefinitionFile>
+        <!-- 追加のライブラリディレクトリ -->
+        <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)../../build/native/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      </Link>
+    </ItemDefinitionGroup>
+
+    <!-- Release x64の設定 -->
+    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      <ClCompile>
+        <!-- 追加のインクルードディレクトリ -->
+        <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../../build/native/;$(MSBuildThisFileDirectory)../../build/native/vstgui4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      </ClCompile>
+      <Link>
+        <ModuleDefinitionFile>$(MSBuildThisFileDirectory)/vst3.def</ModuleDefinitionFile>
+        <!-- 追加のライブラリディレクトリ -->
+        <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)../../build/native/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      </Link>
+    </ItemDefinitionGroup>
+
+    <!-- VST3 DLLmain関数ファイルの追加 -->
+    <ItemGroup>
+      <ClCompile Include="$(MSBuildThisFileDirectory)/public.sdk/source/main/dllmain.cpp" />
+    </ItemGroup>
+</Project>
